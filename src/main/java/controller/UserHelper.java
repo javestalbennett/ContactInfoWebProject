@@ -31,7 +31,7 @@ public class UserHelper {
 		List<User> allUsers = em.createQuery("SELECT s FROM User s").getResultList();
 		return allUsers;
 	}
-	public User findShopper(String nameToLookUp) {
+	public User findUser(String nameToLookUp) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		TypedQuery<User> typedQuery = em.createQuery("select uh from User uh where uh.userName = :selectedName", User.class);
